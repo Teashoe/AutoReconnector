@@ -13,6 +13,7 @@ import net.minecraft.client.network.ServerInfo;
 import org.apache.logging.log4j.LogManager;
 
 public class AutoConnectorMod implements ClientModInitializer {
+    public static final String MODID = "autoreconnector";
     public static int MAX_TICK;
     @Environment(EnvType.CLIENT)
     public static ServerInfo lastestServerEntry;

@@ -20,15 +20,14 @@ public class ModMenuIntegration implements ModMenuApi {
                 .setParentScreen(parent)
                 .setTitle(Text.literal("AutoReconnect Config"));
 
+        AutoReconnectConfig config = AutoReconnectConfig.load();
+
         builder.setSavingRunnable(() -> {
-            AutoReconnectConfig config = AutoReconnectConfig.load();
             config.save();
         });
 
         ConfigCategory general = builder.getOrCreateCategory(Text.literal("General Settings"));
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
-
-        AutoReconnectConfig config = AutoReconnectConfig.load();
 
         IntegerListEntry reconnectDelayEntry = entryBuilder.startIntField(Text.literal("Reconnect Delay (seconds)"), config.reconnectDelay)
                 .setDefaultValue(15)
@@ -40,8 +39,6 @@ public class ModMenuIntegration implements ModMenuApi {
 
         general.addEntry(reconnectDelayEntry);
 
-        builder.setParentScreen(parent);
-        builder.setTransparentBackground(true);
         return builder.build();
     }
 }
