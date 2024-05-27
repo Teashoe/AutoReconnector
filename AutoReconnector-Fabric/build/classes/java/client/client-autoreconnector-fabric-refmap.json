@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "com/takaranoao/mods/autoreconnector/mixins/MixinScreen": {
+      "render": "Lnet/minecraft/class_437;method_25394(Lnet/minecraft/class_332;IIF)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "com/takaranoao/mods/autoreconnector/mixins/MixinScreen": {
+        "render": "Lnet/minecraft/class_437;method_25394(Lnet/minecraft/class_332;IIF)V"
+      }
+    }
+  }
+}
