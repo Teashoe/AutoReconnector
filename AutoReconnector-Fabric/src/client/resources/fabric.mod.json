@@ -5,11 +5,11 @@
   "name": "Auto reconnector mod",
   "description": "Automatically reconnect when you are disconnected from the server.",
   "authors": [
-    "Takaranoao"
+    "Teashoe"
   ],
   "contact": {
-    "homepage": "https://takaranoao.com/",
-    "sources": "https://github.com/Takaranoao/AutoReconnector-Fabric"
+    "homepage": "",
+    "sources": "https://github.com/Teashoe/AutoReconnector"
   },
   "license": "MIT",
   "icon": "assets/autoreconnector/icon.png",
