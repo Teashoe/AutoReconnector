@@ -11,6 +11,11 @@ import net.minecraft.client.gui.screen.multiplayer.ConnectScreen;
 import net.minecraft.client.network.ServerAddress;
 import net.minecraft.client.network.ServerInfo;
 import org.apache.logging.log4j.LogManager;
+import net.minecraft.client.network.CookieStorage;
+import net.minecraft.util.Identifier;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AutoConnectorMod implements ClientModInitializer {
     public static final String MODID = "autoreconnector";
@@ -30,7 +35,13 @@ public class AutoConnectorMod implements ClientModInitializer {
             if (disconnectTick == MAX_TICK && lastestServerEntry != null) {
                 System.out.println(disconnectTick);
                 mc.disconnect();
-                ConnectScreen.connect(new TitleScreen(), mc, ServerAddress.parse(lastestServerEntry.address), lastestServerEntry, false);
+
+                // Create an instance of CookieStorage with an empty map
+                Map<Identifier, byte[]> cookieMap = new HashMap<>();
+                CookieStorage cookieStorage = new CookieStorage(cookieMap);
+
+                // Use the cookieStorage in the connect method
+                ConnectScreen.connect(new TitleScreen(), mc, ServerAddress.parse(lastestServerEntry.address), lastestServerEntry, false, cookieStorage);
                 disconnectTick = 0;
             }
         } else {
