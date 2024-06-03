@@ -12,7 +12,7 @@ public class AutoReconnectConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final File CONFIG_FILE = new File("config/autoreconnector.json");
     public int reconnectDelay = 15; // default to 15 seconds
-    public String reconnectCommand = "/say Reconnected!"; // 추가된 부분: 기본 명령어 설정
+    public String reconnectCommand = ""; // 추가된 부분: 기본 명령어 설정
 
     public static AutoReconnectConfig load() {
         if (CONFIG_FILE.exists()) {

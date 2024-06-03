@@ -42,7 +42,7 @@ public class ModMenuIntegration implements ModMenuApi {
 
         // 추가된 부분: reconnectCommand 설정
         StringListEntry reconnectCommandEntry = entryBuilder.startStrField(Text.literal("Reconnect Command"), config.reconnectCommand)
-                .setDefaultValue("/say Reconnected!")
+                .setDefaultValue("")
                 .setSaveConsumer(newValue -> config.reconnectCommand = newValue)
                 .build();
 
