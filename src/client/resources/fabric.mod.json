@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "autoreconnector",
+  "version": "1.1.1",
+  "name": "Auto reconnector mod",
+  "description": "Automatically reconnect when you are disconnected from the server.",
+  "authors": [
+    "Teashoe"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": "https://github.com/Teashoe/AutoReconnector"
+  },
+  "license": "MIT",
+  "icon": "assets/autoreconnector/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.takaranoao.mods.autoreconnector.AutoConnectorMod"
+    ],
+    "modmenu": [
+      "com.takaranoao.mods.autoreconnector.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "autoreconnector.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": ">=1.20.1",
+    "java": ">=17"
+  },
+  "suggests": {
+    "flamingo": "*"
+  },
+  "custom": {
+    "modmenu:clientsideOnly": true
+  }
+}
